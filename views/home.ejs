@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CHAR" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <title>Empower Hour</title>
+  </head>
+  <body>
+    <div id="first-page-container">
+      <img src="/img/background.png" id="background" />
+
+      <div class="content">
+        <img src="/img/logo.png" id="logo" />
+
+        <span class="title">Select a category</span>
+
+        <select name="categories" id="categories-input">
+          <% Object.keys(categories).forEach(category => { %>
+          <option value="<%= category %>"><%= category %></option>
+          <% }) %>
+        </select>
+
+        <div class="button-container">
+          <button id="play-button">PLAY</button>
+        </div>
+
+        <span id="how-to-play">How to play</span>
+      </div>
+
+      <div id="countdown">10</div>
+    </div>
+
+    <div id="second-page-container">
+      <div id="current-song-container">
+        <span id="current-song"></span>
+      </div>
+
+      <div id="stop-song-button">Pause</div>
+
+      <div id="go-back-button">Go back</div>
+    </div>
+
+    <audio controls type="audio/mpeg" id="main-audio"></audio>
+    <audio id="stock" src="<%= stock %>" type="audio/mpeg"></audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.122.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.122.0/examples/js/controls/OrbitControls.min.js"></script>
+    <script src="https://codepen.io/broregard/pen/MLZNdN.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"
+      integrity="sha512-RdSPYh1WA6BF0RhpisYJVYkOyTzK4HwofJ3Q7ivt/jkpW6Vc8AurL1R+4AUcvn9IwEKAPm/fk7qFZW3OuiUDeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.2/dat.gui.min.js"></script>
+    <script>
+      var categories = JSON.parse(atob("<%= categoriesBase64 %>"));
+    </script>
+    <script src="/js/home.js"></script>
+  </body>
+</html>

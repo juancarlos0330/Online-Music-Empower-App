@@ -1,0 +1,33 @@
+{
+    "ts-node": {
+      "files": true
+    },
+    "files": [
+      "src/index.ts"
+    ],
+    "compilerOptions": {
+      "module": "CommonJS",
+      "declaration": true,
+      "removeComments": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "resolveJsonModule": true,
+      "skipLibCheck": true,
+      "target": "es6",
+      "sourceMap": true,
+      "outDir": "./dist",
+      "baseUrl": "./"
+    },
+    "include": ["./src/**/*.ts"],
+    "exclude": [
+      "node_modules",
+      "dist",
+      "src/tests",
+      "*.test.ts",
+      "*.config.js",
+      "build",
+      "swagger.json"
+    ],
+    "typeRoots": ["./node_modules/@types", "./node_modules"]
+}

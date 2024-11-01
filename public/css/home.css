@@ -1,0 +1,242 @@
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  font-family: "Road Rage";
+  height: 100%;
+}
+
+input {
+  color: white;
+}
+
+audio {
+  position: absolute;
+  right: 0;
+  display: none;
+}
+
+#first-page-container {
+  width: 100%;
+  height: 100%;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: brightness(0.25);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.9;
+  -moz-opacity: 0.9;
+  -webkit-opacity: 0.9;
+}
+
+#logo {
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+#first-page-container .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+#first-page-container .content .title {
+  font-family: "Road Rage";
+  color: #055c9d;
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+  margin: 2rem auto;
+  pointer-events: none;
+  user-select: none;
+  justify-content: center;
+}
+
+#first-page-container .content .button-container {
+  display: flex;
+  justify-content: center;
+}
+
+#first-page-container .content button {
+  font-family: "Road Rage";
+  background-color: #055c9d;
+  display: inline-block;
+  padding: 0.75rem 3rem;
+  margin: 1rem auto;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  border: none;
+  transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+#first-page-container .content button:hover {
+  filter: brightness(0.6);
+}
+
+#categories-input {
+  font-family: "Road Rage", Arial, Helvetica, sans-serif;
+  margin: 1rem auto;
+  display: block;
+  color: #fff;
+  background: #055c9d;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 0.5rem;
+  transition: all cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 0.75rem 10rem 0.75rem 0.5rem;
+  border: none;
+  outline: none;
+}
+
+#categories-input option {
+  font-family: "Road Rage", Arial, Helvetica, sans-serif;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+#second-page-container {
+  display: none;
+}
+
+#current-song-container,
+#stop-song-button,
+#go-back-button {
+  font-family: "Road Rage";
+  position: absolute;
+  margin: 1rem;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#current-song-container {
+  bottom: 0;
+}
+
+#stop-song-button {
+  bottom: 0;
+  right: 0;
+}
+
+#stop-song-button:hover,
+#go-back-button:hover {
+  opacity: 0.8;
+}
+
+#countdown {
+  display: none;
+  color: white;
+  font-size: 3.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  font-family: "Road Rage";
+}
+
+#how-to-play {
+  display: block;
+  margin: 0 auto;
+  color: #6e8da5;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  text-align: center;
+  font-family: "Road Rage";
+}
+
+#how-to-play:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  #stop-song-button {
+    bottom: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  #first-page-container .content .title {
+    font-size: 2rem;
+  }
+
+  #categories-input {
+    padding: 0.75rem 3.75rem 0.75rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  #categories-input option {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media (max-width: 450px) {
+  #first-page-container .content .title {
+    font-size: 1.8rem;
+  }
+
+  #categories-input {
+    padding: 0.75rem 3.5rem 0.75rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  #categories-input option {
+    font-size: 0.65rem;
+    line-height: 0.8rem;
+  }
+
+  #first-page-container .content button {
+    font-size: 0.8rem;
+    padding: 0.65rem 2.5rem;
+  }
+}
+
+@media (max-width: 350px) {
+  #first-page-container .content .title {
+    font-size: 1.2rem;
+  }
+
+  #categories-input {
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    font-size: 0.55rem;
+  }
+
+  #categories-input option {
+    font-size: 0.5rem;
+    line-height: 0.6rem;
+  }
+
+  #first-page-container .content button {
+    font-size: 0.6rem;
+    padding: 0.5rem 2.3rem;
+  }
+
+  #how-to-play {
+    font-size: 0.8rem;
+  }
+}
+
+@font-face {
+  font-family: "Road Rage";
+  src: url("/fonts/Road_Rage.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
